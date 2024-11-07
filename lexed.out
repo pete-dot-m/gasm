@@ -1,0 +1,15 @@
+4: line:	a_cr    = $0d
+5: line:	bsout    = $ffd2
+7: line:	.code
+9: line:	ldx #0
+10: label:	printnext:
+11: line:	lda text,x
+12: line:	beq done
+13: line:	jsr bsout
+14: line:	inx
+15: line:	bne printnext
+16: label:	done:
+17: line:	rts
+19: line:	.rodata
+21: label:	text:
+22: line:	.byte    "Hello world!", a_cr, 0
